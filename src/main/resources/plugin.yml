@@ -1,0 +1,14 @@
+name: FireballFight
+version: '${project.version}'
+main: me.kajias.fireballfight.FireballFight
+prefix: FireballFight/AnixitServer
+author: KAJIAS
+description: FireballFight mini game
+softdepend: [PlaceholderAPI, PlayerPoints, Vault]
+commands:
+  ff:
+    description: Main plugin command.
+  fireballfight:
+    description: Main plugin command.
+  leave:
+    description: Leave command.

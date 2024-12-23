@@ -1,0 +1,454 @@
+Game:
+  StartCountDownValue: 5
+  GameDuration: 1200
+  RespawnCountDown: 4
+  RespawnCountDownLess: 2
+  DoubleJumpCoolDownTicks: 55
+  TrampolineRadius: 5
+  HealthRuneAmplifier: 10.0
+  SpeedRuneAmplifier: 2
+  HealthRuneRespawnChance: 5
+  SpeedRuneRespawnChance: 6
+  RuneRespawnTime: 17
+  ExplosionPushPower:
+    Fireball:
+      Horizontal: 1.3
+      Vertical: 1.8
+    Tnt:
+      Horizontal: 1.6
+      Vertical: 2.1
+    AdditionWhenSprinting: 0.5
+    MultiplierWhenModeX: 8.0
+  BonusReward:
+    SOLO:
+      NORMAL:
+        Kills: 4
+        Victory: 1
+      X:
+        Kills: 4
+        Victory: 2
+    DUO:
+      NORMAL:
+        Kills: 4
+        Victory: 2
+      X:
+        Kills: 5
+        Victory: 3
+Items:
+  LeaveGameItem:
+    Material: BARRIER
+    Name: '&c&lПокинуть игру &7(ПКМ)'
+    Slot: 9
+  FastJoinItem:
+    Material: BLAZE_POWDER
+    Name: '&e&lБыстрая игра &7(ПКМ)'
+    Slot: 5
+  SelectArenaItem:
+    Material: BED
+    Name: '&e&lВыбрать арену &7(ПКМ)'
+    Slot: 2
+  NewGameItem:
+    Material: PAPER
+    Name: '&e&lПрисоедениться к новой игре &7(ПКМ)'
+    Slot: 1
+  BonusShopItem:
+    Material: CHEST
+    Name: '&e&lМагазин бонусов &7(ПКМ)'
+    Slot: 8
+  TrampolineItem:
+    Material: SLIME_BALL
+    Name: '&a&lПодбросить игроков вокруг &7(ПКМ)'
+  SlimePlatformItem:
+    Material: SLIME_BLOCK
+    Name: '&a&lЗаспавнить платформу под собой &7(ПКМ)'
+LogMessages:
+  LobbyWasNotSet: 'Lobby was not set. Please, set the lobby location for players.'
+  MustBePlayerToExecuteCommand: 'This command can be executed only by players.'
+Menus:
+  ArenaSelect:
+    Title: '&7Выбор арены'
+    Size: 36
+    Slots: [ 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25 ]
+    DisplayName: '&7%arena_name%'
+    Material: STAINED_CLAY
+    Lore:
+      - ''
+      - '&7Игроки: &a%arena_players%/%arena_players_total%'
+      - '&7Режим: &a%arena_type%'
+      - '&7Карта: &a%arena_name%'
+      - '&7Статус: &aОжидание...'
+      - ''
+  ItemPurchaseMenu:
+    Title: '&7Покупка'
+    ItemDescriptionFormat:
+      BothPrices:
+        - ''
+        - '&fЦена: &5&l%price_anix% Аниксов %benefit%'
+        - '&fЦена: &6&l%price_bonus% Бонусов'
+        - ''
+        - '&fСрок(дни): %color%%period%'
+        - ''
+        - '&6» &fКупить за &5&lАниксы &f(ЛКМ) &6«'
+        - '&6» &fКупить за &6&lБонусы &f(ПКМ) &6«'
+        - ''
+      AnixPrices:
+        - ''
+        - '&fЦена: &5&l%price_anix% Аниксов %benefit%'
+        - ''
+        - '&fСрок(дни): %color%%period%'
+        - ''
+        - '&6» &fКупить за &5&lАниксы &f(ЛКМ) &6«'
+        - ''
+      Colors:
+        - '&b&l'
+        - '&9&l'
+        - '&4&l'
+        - '&6&l'
+        - '&5&l'
+        - '&f&l'
+  BonusShop:
+    Title: '&7Магазин бонусов'
+    Size: 45
+    Fillers:
+      Black:
+        Material: 'STAINED_GLASS_PANE'
+        Data: 15
+        Slots: [ 1, 2, 8, 9, 37, 38, 44, 45 ]
+      Red:
+        Material: 'STAINED_GLASS_PANE'
+        Data: 14
+        Slots: [ 3, 7, 19, 27, 39, 43 ]
+      Orange:
+        Material: 'STAINED_GLASS_PANE'
+        Data: 1
+        Slots: [ 4, 5, 6, 10, 18, 28, 36, 40, 41, 42 ]
+    Items:
+      DoubleJump:
+        Material: RABBIT_FOOT
+        Name: '&e&lДвойной прыжок'
+        Slot: 11
+        Lore:
+          - ''
+          - '&fДаёт преимущество в прыжке'
+          - ''
+        Price:
+          Anix:
+            - 44
+            - 69
+            - 99
+            - 139
+            - 239
+            - 389
+          Bonus:
+            - 129
+            - 199
+            - 299
+            - 447
+            - 679
+          Benefit:
+            - '&9&lСКИДКА ДЛЯ БОНУСОВ 7%'
+            - '&6« &b&lВЫГОДА 11%'
+            - '&6« &9&lВЫГОДА 25%'
+            - '&6« &4&lВЫГОДА 37%'
+            - '&6« &6&lВЫГОДА 45%'
+            - '&6« &5&lВЫГОДА 59%'
+      Trampoline:
+        Material: SLIME_BALL
+        Name: '&a&lПодбрасыватель'
+        Slot: 14
+        Lore:
+          - ''
+          - '&fМы сможете подбросить себя и'
+          - '&fпротивника на 20 блоков вверх'
+          - ''
+        Price:
+          Anix:
+            - 29
+            - 49
+            - 69
+            - 99
+            - 159
+            - 269
+          Bonus:
+            - 88
+            - 144
+            - 237
+            - 387
+            - 417
+          Benefit:
+            - '&6« &4&lСКИДКА ДЛЯ БОНУСОВ 10%'
+            - '&6« &b&lВЫГОДА 23%'
+            - '&6« &9&lВЫГОДА 40%'
+            - '&6« &4&lВЫГОДА 41%'
+            - '&6« &6&lВЫГОДА 55%'
+            - '&6« &5&lВЫГОДА 64%'
+      ThrowableTNT:
+        Material: TNT
+        Name: '&c&lБросающийся динамит'
+        Slot: 17
+        Lore:
+          - ''
+          - '&fВы сможете бросать динамит'
+          - '&fнажатием правой кнопкой мыши'
+          - ''
+        Price:
+          Anix:
+            - 39
+            - 69
+            - 109
+            - 149
+            - 229
+            - 369
+          Bonus:
+            - 117
+            - 199
+            - 329
+            - 447
+            - 689
+          Benefit:
+            - '&6« &5&lСКИДКА ДЛЯ БОНУСОВ 17%'
+            - '&6« &b&lВЫГОДА 7% &5&l+ &4&lСКИДКА ДЛЯ БОНУСОВ 10%'
+            - '&6« &9&lВЫГОДА 40%'
+            - '&6« &4&lВЫГОДА 42%'
+            - '&6« &6&lВЫГОДА 52%'
+            - '&6« &5&lВЫГОДА 67%'
+      LessRespawnTime:
+        Material: WATCH
+        Name: '&6&lУкороченное время респавна'
+        Slot: 29
+        Lore:
+          - ''
+          - '&fВремя респавна сокращается в два раза'
+          - ''
+        Price:
+          Anix:
+            - 29
+            - 49
+            - 79
+            - 109
+            - 179
+            - 279
+          Bonus:
+            - 88
+            - 144
+            - 239
+            - 329
+            - 539
+          Benefit:
+            - '&4&lСКИДКА ДЛЯ БОНУСОВ 10%'
+            - '&6« &b&lВЫГОДА 23%'
+            - '&6« &9&lВЫГОДА 40%'
+            - '&6« &4&lВЫГОДА 41%'
+            - '&6« &6&lВЫГОДА 55%'
+            - '&6« &5&lВЫГОДА 64%'
+      ShearsEfficiency:
+        Material: SHEARS
+        Name: '&3&lНожницы на эффективность'
+        Slot: 32
+        Lore:
+          - ''
+          - '&fПосле приобретения вам будут'
+          - '&fвыдаваться ножницы на эффективность IV'
+          - ''
+        Price:
+          Anix:
+            - 25
+            - 39
+            - 69
+            - 89
+            - 149
+            - 249
+          Bonus:
+            - 77
+            - 117
+            - 199
+            - 269
+            - 447
+          Benefit:
+            - '&6« &5&lСКИДКА ДЛЯ БОНУСОВ 33%'
+            - '&6« &b&lВЫГОДА 27% &4&l+ &4&lСКИДКА ДЛЯ БОНУСОВ 10%'
+            - '&6« &9&lВЫГОДА 35% &4&l+ &9&lСКИДКА ДЛЯ БОНУСОВ 7%'
+            - '&6« &4&lВЫГОДА 40% &4&l+ &4&lСКИДКА ДЛЯ БОНУСОВ 10%'
+            - '&6« &6&lВЫГОДА 57%'
+            - '&6« &5&lВЫГОДА 67%'
+      SlimePlatform:
+        Material: SLIME_BLOCK
+        Name: '&2&lСлайм платформа'
+        Slot: 35
+        Lore:
+          - ''
+          - '&fВы сможете спастись от падения'
+          - '&fиспользовав 3х3 слайм платформу'
+          - ''
+        Price:
+          Anix:
+            - 25
+            - 39
+            - 69
+            - 99
+            - 169
+            - 279
+          Bonus:
+            - 77
+            - 117
+            - 209
+            - 399
+            - 499
+          Benefit:
+            - '&6« &4&lСКИДКА ДЛЯ БОНУСОВ 10%'
+            - '&6« &b&lВЫГОДА 17% &5&l+ &9&lСКИДКА ДЛЯ БОНУСОВ 7%'
+            - '&6« &9&lВЫГОДА 33%'
+            - '&6« &4&lВЫГОДА 43%'
+            - '&6« &6&lВЫГОДА 51%'
+            - '&6« &5&lВЫГОДА 67%'
+Messages:
+  Prefix: '&e&lFireball Fight &8► &7'
+  GameChatFormat:
+    Default: '&f%s &8→ &7%s'
+    Team: '%team_color%[Команде] &f%s &8→ &7%s'
+    Global: '%team_color%[Всем] &f%s &8→ &7%s'
+  AdminHelp:
+    - '&6&lFireball Fight &7 Команды для админов'
+    - '&6&m---------------------------------------'
+    - ''
+    - '&e/ff setlobby &f- Установить точку появления игроков в лобби'
+    - '&e/ff create <Название арены> <Название мира> <Название шаблона арены> &f- Создать арену из существующего мира'
+    - '&e/ff disable <Название арены> &f- Отключить арену'
+    - '&e/ff enable <Название арены> &f- Включить арену'
+    - '&e/ff setup <Название арены> &f- Перейти в настройку арены'
+    - '&e/ff list &f- Список текущих арен'
+    - ''
+    - '&6&m---------------------------------------'
+  TeamNotDefined: '&7Укажите команду игроков "&f/rw setspawn red&7" или "&f/rw setspawn blue&7"\nТакже укажите точку спавна ожидания игроков "&f/rw setspawn waiting&7"'
+  UnknownSubcommand: '&7Неизвестная команда'
+  UnknownArgument: '&7Неизвестный аргумент команды'
+  ArenaNameIsNotSpecified: '&7Не указано название арены'
+  ArenaHasBeenDisabled: '&7Арена %name% &7успешно отключена'
+  ArenaHasBeenEnabled: '&7Арена &e%name% &7успешно &aвключена&7'
+  ArenaAlreadyEnabled: '&7Арена &e%name% &7уже включена'
+  NoPermission: '&7Недостаточно прав для выполнения данной команды.'
+  CantBuyForBonuses: '&7Нельзя купить навсегда за бонусы'
+  AddHealthRuneTextComponent: '&eДобавить руну &cздоровья: &f/ff addrune HEALTH'
+  AddSpeedRuneTextComponent: '&eДобавить руну &bскорости: &f/ff addrune SPEED'
+  RuneNameIsNotSpecified: '&7Не указано название руны'
+  InvalidRuneName: '&7Некорректное название руны, требуется указать: &fHEALTH &7или &fSPEED'
+  RemoveRunesTextComponent: '&cУдалить все руны на арене'
+  NoCommandsInGame: '&7Вы не можете использовать данную команду во время игры.'
+  NotInGame: '&7Вы не в игре.'
+  NotInArenaWorld: '&7Вы должны находиться в режиме настройки арены для использования данной команды'
+  LobbyWasNotSet: '&cЛобби было не установлено, телепортируем вас в обычный мир'
+  LobbyWasSet: '&eЛокация лобби установлена'
+  ArenaIsFull: '&7Арена заполнена'
+  ArenaExists: '&7Арена с именем %arena_name% &7уже существует'
+  ArenaDoesNotExist: '&7Арены с именем %arena_name% &7не существует'
+  TemplateWorldNotFound: '&7Не удалось найти мир с названием %world_name%'
+  FailedToDisableArena: '&7Не удалось отключить арену &e%name%. &7Возможно она уже отключена, либо арена находится в фазе перезагрузки.'
+  ArenaIsAlreadyInSetupMode: '&7Данная арена уже находиться в режиме настройки'
+  ToSetupMustDisabled: '&7Арена должна быть отключена для перехода в режим настройки'
+  ArenaCreated: '&eУспешно создана арена %arena_name%'
+  ArenaTypeUnknown: '&7Данного типа арены не существует'
+  GameTypeUnknown: '&7Данного типа игры не существует'
+  ArenaTypeChoice: '&7Укажите тип арены: '
+  GameTypeChoice: '&7Укажите тип игры: '
+  NoAvailableArenas: '&7Нет доступных арен для игры.'
+  SetupStatus: '&7Прогресс настройки &o(сообщения интерактивные)&7:'
+  SpawnSet: '&eТочка появления игроков установлена.'
+  SpawnPointRed: '&7Точка появления игроков &cкрасной &7команды'
+  SpawnPointBlue: '&7Точка появления игроков &9синей &7команды'
+  RedTeamBedLocation: '&7Точка кровати &cкрасной &7команды'
+  BlueTeamBedLocation: '&7Точка кровати &9синей &7команды'
+  BedLocationSet: '&eТочка кровати установлена.'
+  SpawnPointWaiting: '&7Точка ожидания игроков'
+  SpawnPointSpectator: '&7Точка появления наблюдателей'
+  XYZ: "(&eX: &3%x%&7, &eY: &3%y%&7, &eZ: &3%z%&7)"
+  ArenaList: "&7Список арен:\n&a● &7- арена включена, &8● &7- арена включена и идёт игра, &e● &7- арена находится в режиме настройки,  &c● &7- &7арена выключена\n&7Имя - Мир - Состояние"
+  ArenaListFormat: '%name%  &7|&f  %world%  &f&7|&f  %state%'
+  ArenaListEmpty: '&7На данный момент нет ни одной арены'
+  StartCountDown: '&7Игра начнётся через &e%time% &7сек.'
+  RespawnMessageCountDown: '&eВозрождение через &d%seconds% &eсек.'
+  GameStartMessage: '&aУДАЧНОЙ ИГРЫ!'
+  VictoryMessage: '&aПОБЕДА!'
+  BonusRewardMessage: '&3&lБонусы за победу &6&l+%bonus%'
+  DefeatMessage: '&cВЫ ПРОИГРАЛИ!'
+  DrawMessage: '&eНИЧЬЯ! ВРЕМЯ ВЫШЛО!'
+  DeathMessage: '&cВЫ УМЕРЛИ!'
+  PlayerJoined: '&7Игрок &a%player% &7присоединился к игре (&e%current%&8/&e%max%&7)'
+  PlayerLeft: '&7Игрок &c%player% &7вышел из игры (&e%current%&8/&e%max%&7)'
+  PlayerLeftInGame: '&7Игрок &c%player% &7покинул игру.'
+  NoPlayersLeft: '&7В игре не осталось игроков. Игра была аннулирована, телепортирую Вас в лобби...'
+  BedDestroyedMessage: '&cКРОВАТЬ УНИЧТОЖЕНА!'
+  ModifySpawnPointHoverMessage: '&7Нажмите чтобы установить точку появления игроков в том месте, где Вы стоите.'
+  ModifyHoverMessage: '&7Нажмите чтобы изменить это значение'
+  FinishSetupButtonText: '&a[Закончить настройку арены]'
+  FinishSetupButtonHoverMessage: '&7Нажмите чтобы закончить настройку арены.'
+  FailedToFinishSetup: '&7Арена не была настроена правильно.'
+  NotInSetup: '&7Вы не находитесь в режиме настройки арены.'
+  ExitingSetup: '&7Выхожу из режима настройки...'
+  InsufficientMoney: '&7Не хватает средств'
+  ItemPurchaseSuccessful: '&6Предмет куплен!'
+  ItemWasAlreadyBought: '&eУ вас уже есть в наличии данный предмет'
+  TrampolineUsedByPlayer: '&aВас подкинул игрок %name%'
+  NoPlayersInRadius: "&7Нет игроков внутри радиуса действия!"
+  PlayerDestroyedBed:
+    Red: '&7Игрок %name% &7сломал кровать команде &cкрасных'
+    Blue: '&7Игрок %name% &7сломал кровать команде &9синих'
+  PlayerKilledByPlayer: '%name% &7был убит игроком %killer_name%'
+  PlayerKickedIntoVoidByPlayer: '%name% &7был скинут в бездну игроком %killer_name%'
+  PlayerFellIntoVoid: '%name% &7упал в бездну'
+  TeamIndicator: '&7Вы'
+  HealthRuneHologram: '&c&lРУНА ЗДОРОВЬЯ &6&l(ПКМ)'
+  HealthRunePickup: '&aВЫ ПОДОБРАЛИ РУНУ ЗДОРОВЬЯ!'
+  SpeedRuneHologram: '&b&lРУНА СКОРОСТИ &6&l(ПКМ)'
+  SpeedRunePickup: '&aВЫ ПОДОБРАЛИ РУНУ СКОРОСТИ!'
+  GameType:
+    NORMAL: '&eОбычный'
+    X: '&c&lX'
+  TeamType:
+    RED: '&c'
+    BLUE: '&9'
+Scoreboard:
+  Title: '    &e&lFIREBALL FIGHT    '
+  Lobby:
+    - '&7%localtime_time_dd/MM/yy%'
+    - ''
+    - 'Ник: &e%player_name%'
+    - 'Ранг: &l%vault_prefix%'
+    - ''
+    - 'Аниксы: &5&l%playerpoints_points%'
+    - 'Бонусы: &6&l%vault_eco_balance_formatted%'
+    - ''
+    - 'Игр: &e%games_played%'
+    - 'Побед &e%games_won%'
+    - 'Убийств &e%kills%'
+    - 'Смертей &e%deaths%'
+    - 'Сломано кроватей &e%beds_destroyed%'
+    - ''
+    - '&6&lANIX&5&lIT&8&l.&4&lNET'
+  Waiting:
+    - ''
+    - '&fИгроки: &e%arena_players%/%arena_players_total%'
+    - ''
+    - '&fКарта: &e%arena_name%'
+    - '&fРежим: &e%game_type%'
+    - '&fТип: &e%arena_type%'
+    - ''
+    - '&6&lANIX&5&lIT&8&l.&4&lNET'
+  Started:
+    - ''
+    - '&cК&f: &c%red_team_bed% %red_team_indicator%'
+    - '&9С&f: &9%blue_team_bed% %blue_team_indicator%'
+    - '&fУбийств: &c%kills%'
+    - ''
+    - '&fКарта: &e%arena_name%'
+    - '&fРежим: &e%game_type%'
+    - '&fТип: &e%arena_type%'
+    - ''
+    - '&6&lANIX&5&lIT&8&l.&4&lNET'
+  Ending:
+    - ''
+    - '&f&lМатч окончен'
+    - ''
+    - '&6&lANIX&5&lIT&8&l.&4&lNET'
+PlayerSkulls:
+  HealthRune: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTY4NTNlYzFjNDBjOTI2ZTRhN2I1ZWQ1YTlkZDJjMGY2OTBiYzU4MzAyMTZjYjE4MmY1ZDkxODVjM2FhMjJlOCJ9fX0='
+  SpeedRune: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZThmNWRjOTI3OTIzMjc5MTI3YTlkMmFkZTg2NDMyZjk4Nzc2MDljYjlmODM4NTRhNWI4OTJiZjdjYWQ5ZGYyZiJ9fX0='
